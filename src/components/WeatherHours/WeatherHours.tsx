@@ -2,6 +2,7 @@ import {FreeMode} from 'swiper';
 import {Air} from '@mui/icons-material';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {convertTimestampToDate} from '../helpers/convertTimestampToDate'
+import {generateIcon} from '../helpers/generateIcon'
 import { useAppSelector } from '../../redux/hook';
 import {convertTemp} from '../helpers/convertTemp';
 import {convertSpeed} from '../helpers/convertSpeed';
@@ -28,6 +29,7 @@ export const WeatherHours = () => {
                                 {idx === 0 ? 'Сейчас' : convertTimestampToDate(el.dt)}
                             </span>
                             <span className={styles.temp}>{convertTemp(el.temp, unitTemp)} <sup>°</sup></span>
+                            {generateIcon(el.weather[0].icon)}
                             <div className={styles.windSpeed}>
                                 <Air />
                                 <span className={styles.windSpeedValue}>{convertSpeed(el.wind_speed, unitSpeed)} {unitSpeed}</span>

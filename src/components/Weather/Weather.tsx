@@ -5,6 +5,7 @@ import { WeatherInfo } from '../WeatherInfo/WeatherInfo';
 import {convertTemp} from '../helpers/convertTemp';
 import { useActions, useAppSelector } from '../../redux/hook';
 import {Cloud} from '@mui/icons-material';
+import {generateIcon} from '../helpers/generateIcon'
 import styles from './Weather.module.scss';
 
 export const Weather = () => {
@@ -13,10 +14,10 @@ export const Weather = () => {
 	const {unitTemp} = useAppSelector(state => state.unitReducer)
 	const {toggleMenu} = useActions()
 	const {temp, clouds} = {...data?.current};
-	console.log(data)
 	const WeatherContent = () => (
 		<div className={styles.content}>
 			<div className={styles.icontemp}>
+			{generateIcon(data?.current.weather[0].icon)}
 			<h2 className={styles.temp}>	
 				{convertTemp(temp, unitTemp)}
 				<sup>{unitTemp}</sup>

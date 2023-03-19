@@ -1,5 +1,6 @@
 import {convertTemp} from '../helpers/convertTemp'
 import {convertTimestampToDate} from '../helpers/convertTimestampToDate'
+import {generateIcon} from '../helpers/generateIcon'
 import { useAppSelector } from '../../redux/hook'
 import styles from './WeatherDays.module.scss'
 
@@ -17,6 +18,7 @@ export const WeatherDays = () => {
                 return (
                     <div className={styles.item} key={idx}>
                         <div className={styles.left}>
+                            {generateIcon(weather[0].icon)}
                             <span className={styles.day}>{convertTimestampToDate(dt, 'dd')}</span>
                             <span className={styles.desc}>{weather[0].description}</span>
                         </div>

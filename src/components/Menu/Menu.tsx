@@ -3,6 +3,7 @@ import {FreeMode} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {convertTemp} from '../helpers/convertTemp';
 import {convertTimestampToDate} from '../helpers/convertTimestampToDate';
+import { generateIcon } from '../helpers/generateIcon';
 import { useActions, useAppSelector } from '../../redux/hook'
 import styles from './Menu.module.scss';
 
@@ -39,6 +40,7 @@ export const Menu = () => {
                                 <div className={styles.item}>
                                     <span className={styles.day}>{convertTimestampToDate(dt, 'dd')}</span>
                                     <span className={styles.date}>{convertTimestampToDate(dt, 'DD.MM')}</span>
+                                    {generateIcon(weather[0].icon)}
                                     <div className={styles.temp}>
                                         <span className={styles.tempValue}>{convertTemp(max, unitTemp)}<sup>°</sup></span>
                                         <span className={styles.tempDivider}>/</span>
