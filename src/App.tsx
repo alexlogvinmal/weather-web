@@ -1,11 +1,18 @@
-import React from 'react';
-
+import { Provider } from 'react-redux';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './theme';
+import { setupStore } from './store';
 
 function App() {
-  return (
-    <div >
 
-    </div>
+  const store = setupStore();
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+
+      </Provider>
+    </ThemeProvider>
   );
 }
 
