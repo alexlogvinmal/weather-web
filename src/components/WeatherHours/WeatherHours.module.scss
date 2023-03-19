@@ -1,0 +1,76 @@
+.container {
+    padding: 50px 0 40px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+
+    & > svg {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        pointer-events: none;
+    }
+}
+
+.time {
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 10px;
+    color: rgba(#fff, 0.7);
+}
+
+.temp {
+    position: relative;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    pointer-events: none;
+    margin-bottom: 10px;
+
+    sup {
+        position: absolute;
+        top: -2px;
+        right: -6px;
+    }
+}
+
+.slideImage {
+    display: block;
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+}
+
+.windSpeed {
+    display: flex;
+    align-items: center;
+    color: rgba(#fff, 0.7);
+
+    svg {
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-right: 4px;
+
+        @media (max-width: 576px) {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.windSpeedValue {
+    font-size: 12px;
+    line-height: 12px;
+
+    @media (max-width: 576px) {
+        font-size: 9px;
+        line-height: 9px;
+    }
+}
